@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -39,8 +40,8 @@ public class MainActivity extends ActionBarActivity {
      * 更新时间
      */
     Handler viewHandler=new Handler(){
-    	public void handleMessage(android.os.Message msg) {
-    		text_time.setText(time+"秒");
+    	public void handleMessage(Message msg) {
+    			text_time.setText(time+"秒");
     	};
     };
     
@@ -51,9 +52,12 @@ public class MainActivity extends ActionBarActivity {
 		
 		@Override
 		public void run() {
-			mHandler.postDelayed(timeRunnable, 1000);
+			
 			time++;
-			viewHandler.hasMessages(1);
+			if(time==POST_PLAY+POST_STOP)
+				mHandler.removeCallbacks(timeRunnable);
+			viewHandler.handleMessage(new Message());
+			mHandler.postDelayed(timeRunnable, 1000);
 		}
 	};
     
