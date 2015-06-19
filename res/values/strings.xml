@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VoiceDemo</string>
+    <string name="hello_world">30秒后播放音乐\n播放一分钟停止</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
