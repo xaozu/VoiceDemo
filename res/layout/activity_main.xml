@@ -9,12 +9,19 @@
     tools:context="com.example.voicedemo.MainActivity"
      >
 
-    <TextView
-        android:id="@+id/text_hello"
+    <EditText
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" 
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:hint="从多少秒开始播放"/>
+    <Button 
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始播放"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/edit"/>
     
     <TextView
         android:id="@+id/text_time"
@@ -22,6 +29,6 @@
         android:layout_height="wrap_content"
         android:text="00" 
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/text_hello"/>
+        android:layout_below="@id/edit"/>
 
 </RelativeLayout>

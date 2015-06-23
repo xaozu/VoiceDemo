@@ -34,6 +34,8 @@ public class SoundService extends Service {
 	        	Toast.makeText(SoundService.this, "暂停播放！", Toast.LENGTH_SHORT).show();
 	            mp.pause();
 	        }
+	        mp.getDuration();//获得时长
+//	        mp.seekTo(msec)
 	        return super.onStartCommand(intent, flags, startId);
 	    }
 	 
